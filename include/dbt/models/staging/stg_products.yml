@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: stg_products
+    description: "Cleaned and renamed products from raw source"
+    columns:
+      - name: product_id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: product_name
+        description: "The name of the product"
+        tests:
+          - not_null
+      - name: product_type
+        description: "The type of the product"
+      - name: product_description
+        description: "A description of the product"
+      - name: price
+        description: "The price of the product in dollars"
+        tests:
+          - not_null
+  

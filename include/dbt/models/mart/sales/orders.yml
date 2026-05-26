@@ -1,0 +1,62 @@
+version: 2
+
+models:
+  - name: orders
+    description: "Final orders fact table for use in BI"
+    columns:
+      - name: order_id
+        description: "Order id"
+        tests:
+          - not_null
+      - name: customer_id
+        description: "Foreign key to customers dimension"
+        tests:
+          - not_null
+      - name: customer_name
+        description: "The customer's full name"
+        tests:
+          - not_null
+      - name: store_id
+        description: "Foreign key to stores dimension"
+        tests:
+          - not_null
+      - name: store_name
+        description: "The name of the store where the order was made"
+        tests:
+          - not_null
+      - name: ordered_at
+        description: "The date timestamp the order was made"
+        tests:
+          - not_null
+      - name: product_id
+        description: "Foreign key to products dimension"
+        tests:
+          - not_null
+      - name: product_name
+        description: "The name of the product that was ordered"
+        tests:
+          - not_null
+      - name: quantity
+        description: "The quantity of the product that was ordered"
+        tests:
+          - not_null
+      - name: unit_price
+        description: "The price of a single unit of the product"
+        tests:
+          - not_null
+      - name: unit_cost
+        description: "The cost of a single unit of the product"
+        tests:
+          - not_null
+      - name: order_amount
+        description: "The total amount of the order (quantity * unit_price). Excludes tax"
+        tests:
+          - not_null
+      - name: order_cost
+        description: "The total cost of the order (quantity * unit_cost). Excludes tax"
+        tests:
+          - not_null
+      - name: order_profit
+        description: "The total profit of the order (order_amount - order_cost). Excludes tax"
+        tests:
+          - not_null

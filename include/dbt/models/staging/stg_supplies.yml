@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: stg_supplies
+    description: "Cleaned and renamed supplies from raw source"
+    columns:
+      - name: supply_surrogate_id
+        description: "Primary key for the supply table. Combination of supply_id and product_id to ensure uniqueness."
+        tests:
+          - unique
+          - not_null
+      - name: supply_id
+        description: "Supply ID"
+        tests:
+          - not_null
+      - name: supply_name
+        description: "The name of the supply item"
+        tests:
+          - not_null
+      - name: cost
+        description: "The cost of the supply item"
+        tests:
+          - not_null
+      - name: is_perishable
+        description: "Whether the supply item is perishable"
+        tests:
+          - not_null
+      - name: product_id
+        description: "The product ID associated with the supply item"
+        tests:
+          - not_null

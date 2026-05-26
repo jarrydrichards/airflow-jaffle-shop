@@ -1,0 +1,40 @@
+# Version control
+.git
+.gitignore
+
+# Environment & secrets
+.env
+*.env.*
+
+# Airflow (local dev only)
+airflow_settings.yaml
+airflow.db
+airflow.cfg
+airflow-webserver.pid
+webserver_config.py
+standalone_admin_password.txt
+logs/
+
+# Astro CLI
+.astro/standalone/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# dbt local artifacts
+*.duckdb
+*.duckdb.wal
+dbt_packages/
+target/
+
+# macOS
+.DS_Store
+
+# Docs
+README.md

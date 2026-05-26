@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: int_cost_per_product
+    description: "Cleaned and renamed products from raw source"
+    columns:
+      - name: product_id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: price
+        description: "The unit price of the product"
+        tests:
+          - not_null
+      - name: cost
+        description: "The unit cost of the product"
+        tests:
+          - not_null
+  

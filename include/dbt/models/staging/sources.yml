@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: main
+    tables:
+    - name: raw_customers
+      description: "The raw customers table. One row per customer."
+    - name: raw_items
+      description: "The products that are included in orders. One row per item per order"
+    - name: raw_orders
+      description: "The raw orders table. One row per order."
+    - name: raw_products
+      description: "The raw products table. One row per product."
+    - name: raw_stores
+      description: "The raw stores table. One row per store."
+    - name: raw_supplies
+      description: "The supplies used to produce each product. One row per component per product."

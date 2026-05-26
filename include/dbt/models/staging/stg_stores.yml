@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_stores
+    description: "Cleaned and renamed stores from raw source"
+    columns:
+      - name: store_id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: store_name
+        description: "The name of the city the store is located in"
+        tests:
+          - not_null
+      - name: opened_date
+        description: "The date the store opened"
+        tests:
+          - not_null
+      - name: tax_rate
+        description: "The tax rate for the store"
+        tests:
+          - not_null

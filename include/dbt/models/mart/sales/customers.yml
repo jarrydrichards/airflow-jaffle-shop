@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: customers
+    description: "Final customers dimension for use in BI"
+    columns:
+      - name: customer_id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: customer_name
+        description: "The customer's full name"
+        tests:
+          - not_null
