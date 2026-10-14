@@ -13,6 +13,10 @@ models:
         description: "The id of the customer who made the order"
         tests:
           - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
       - name: ordered_at
         description: "The date and time the order was created"
         tests:
@@ -21,12 +25,18 @@ models:
         description: "The id of the store where the order was made"
         tests:
           - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_stores')
+                field: store_id
       - name: amount_excluding_tax
         description: "The total amount of the order, excluding tax"
         tests:
           - not_null
       - name: tax_amount
         description: "The total tax amount for the order"
+        tests:
+          - not_null
       - name: amount_including_tax
         description: "The total amount of the order, including tax"
         tests:

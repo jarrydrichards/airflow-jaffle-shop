@@ -15,8 +15,12 @@ models:
           - not_null
       - name: product_type
         description: "The type of the product"
+        tests:
+          - not_null
       - name: product_description
         description: "A description of the product"
+        tests: 
+          - not_null
       - name: price
         description: "The price of the product in dollars"
         tests:

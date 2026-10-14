@@ -1,6 +1,6 @@
 {{ config(tag='mart') }}
 
-with
+with 
 
 staging_orders as (
     select 
@@ -29,4 +29,6 @@ comparison as (
 
 select *
 from comparison
-where abs(difference) > 0.01 -- catches floating point rounding
+where
+    order_id is null
+    or abs(difference) > 0.01 -- catches floating point rounding
