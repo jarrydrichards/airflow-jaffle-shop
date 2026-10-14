@@ -1,4 +1,4 @@
-{{ config(tag='mart') }}
+{{ config(tags='mart') }}
 
 with 
 

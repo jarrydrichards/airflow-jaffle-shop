@@ -48,17 +48,17 @@ def jaffle_shop_pipeline():
 
     dbt_run_staging = BashOperator(
         task_id="dbt_run_staging",
-        bash_command=f"cd {DBT_DIR} && dbt build -s staging.* --exclude tag:marts --profiles-dir ."
+        bash_command=f"cd {DBT_DIR} && dbt build -select staging.* --exclude tag:mart --profiles-dir ."
     )
 
     dbt_run_intermediate = BashOperator(
         task_id="dbt_run_intermediate",
-        bash_command=f"cd {DBT_DIR} && dbt build -s intermediate.* --exclude tag:marts --profiles-dir ."
+        bash_command=f"cd {DBT_DIR} && dbt build -select intermediate.* --exclude tag:mart --profiles-dir ."
     )
 
     dbt_run_marts = BashOperator(
         task_id="dbt_run_marts",
-        bash_command=f"cd {DBT_DIR} && dbt build -s marts.* --profiles-dir ."
+        bash_command=f"cd {DBT_DIR} && dbt build -select mart.* --profiles-dir ."
     )
 
     # Set dependencies
